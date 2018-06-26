@@ -1,0 +1,7 @@
+.env
+node_modules
+server/dist
+site/dist
+lib/dist
+./node_modules
+package-lock.json

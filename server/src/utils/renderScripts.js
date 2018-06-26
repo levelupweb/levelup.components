@@ -1,0 +1,1 @@
+module.exports = scripts => scripts.map((item) => `<script src=${item}></script>`);
