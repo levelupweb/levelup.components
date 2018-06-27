@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server-build": "webpack --config=webpack.config.server.js",
-    "server-run": "node ./server/dist/build.js",
+    "server-run": "node ./site/backend/dist/build.js",
     "site-build": "webpack --config=webpack.config.site.js",
     "lib-build": "webpack --config=webpack.config.lib.js"
   },
@@ -19,8 +19,12 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
     "eslint": "^5.0.1",
     "eslint-plugin-react": "^7.10.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.21.0",
     "webpack": "^4.12.1",
     "webpack-cli": "^3.0.8"
   },

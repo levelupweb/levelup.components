@@ -4,10 +4,10 @@ const config = require("./config");
 const webpack = {
 	name: "site",
 	mode: config.env,
-	entry: path.join(__dirname, "site", "src", "index.jsx"),
+	entry: path.join(__dirname, "site/frontend/src", "index.jsx"),
 	output: {
 		filename: "build.js",
-		path: path.resolve(__dirname, "site", "dist"),
+		path: path.resolve(__dirname, "site/frontend/dist"),
 	},
 	target: "web",
 	watch: config.env === "development",
@@ -24,10 +24,14 @@ const webpack = {
 			}],
 		}, ]
 	},
+	optimization: {
+		minimize: true
+	},
 	resolve: {
 		alias: {
 			["@config"]: path.resolve("config.js"),
-			["@site"]: path.resolve("site/src"),
+			["@site"]: path.resolve("site/frontend/src"),
+			["levelup-components"]: path.resolve("lib/dist/main.js")
 		},
 		extensions: ["*", ".js", ".jsx"]
 	}

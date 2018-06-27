@@ -1,18 +1,17 @@
 const path = require("path");
 const config = require("./config");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const getPathToComponent = component => path.join(__dirname, "lib", "src", "components", component, "index.jsx");
+const extractLESS = new ExtractTextPlugin("main.css");
 
 module.exports = {
 	mode: config.env,
-	entry: {
-		["button"]: getPathToComponent("Button"),
-		["typography"]: getPathToComponent("typography"),
-		// ["storybook"]: path.join(__dirname, "storybook", "index.js"),
-	},
+	entry: path.resolve(__dirname, "lib/src", "index.js"),
 	output: {
 		filename: "[name].js",
 		path: path.resolve(__dirname, "lib", "dist"),
+		library: "levelupComponents",
+		libraryTarget: "amd"
 	},
 	// optimization: {
 	// 	splitChunks: {
@@ -31,12 +30,22 @@ module.exports = {
 					presets: ["env", "react"]
 				}
 			}],
-		}, ]
+		}, {
+			test: /\.less$/,
+			exclude: /node_modules/,
+			use: extractLESS.extract([
+				{ loader: "css-loader",  options: { sourceMap: true, localIdentName: "[local]_[hash:base64:5]" } }, 
+				{ loader: "less-loader", options: { sourceMap: true } }
+			])
+		}]
 	},
+	plugins: [extractLESS],
 	resolve: {
 		alias: {
 			["@config"]: path.resolve("config.js"),
 			["@components"]: path.resolve("lib/src/components")
-		}
-	}
+		},
+		extensions: ["*", ".js", ".jsx"]
+	},
+	watch: config.env === "development"
 };

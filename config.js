@@ -1,5 +1,7 @@
 module.exports = {
-	siteDist: "assets",
+	siteDistPathname: "assets",
 	serverDist: "server/dist",
-	env: "development"
+	libDist: "lib/dist",
+	env: "development",
+	port: 3000,
 };

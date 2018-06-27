@@ -5,16 +5,19 @@ const nodeModules = {};
 const webpack = {
 	name: "server",
 	mode: config.env,
-	entry: path.join(__dirname, "server", "src", "index.js"),
+	entry: path.join(__dirname, "site/backend/src", "index.js"),
 	output: {
 		filename: "build.js",
-		path: path.resolve(__dirname, "server", "dist"),
+		path: path.resolve(__dirname, "site/backend/dist"),
 	},
 	target: "node",
 	externals: nodeModules,
 	node: {
 		fs: "empty",
 		net: "empty"
+	},
+	optimization: {
+		minimize: true
 	},
 	watch: config.env === "development",
 	module: {
@@ -33,7 +36,9 @@ const webpack = {
 	resolve: {
 		alias: {
 			["@config"]: path.resolve("config.js"),
-			["@site"]: path.resolve("site/src"),
+			["@site"]: path.resolve("site/frontend/src"),
+			["@root"]: path.resolve("site/backend/src"),
+			["levelup-components"]: path.resolve("lib/dist/main.js")
 		},
 		extensions: ["*", ".js", ".jsx"]
 	}
