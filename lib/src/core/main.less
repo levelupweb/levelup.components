@@ -4,15 +4,15 @@
 // global variables
 @import "./variables/index.less";
 
+// font mixin
 @import "./mixins/font.less";
-@import "./variables/index.less";
 
 .font-face(@core-font-family, "Regular", 400, normal);
 .font-face(@core-font-family, "Bold", 600, normal);
 .font-face(@core-font-family, "ExtraBold", 800, normal);
 
 body {
-  .font(@core-font-family, @core-font-size, normal, normal); 
+  .font(@core-font-family, @core-font-size, normal, normal);
 
   b, strong {
     font-weight: bold;
