@@ -1,7 +1,7 @@
 .env
 node_modules
 site/frontend/dist
-site/server/dist
+site/backend/dist
 lib/dist
 ./node_modules
 package-lock.json

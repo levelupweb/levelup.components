@@ -1,14 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Typography } from "levelup-components";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
+import { Typography, Menu } from "levelup-components";
 
-const Header = () => {
+const Header = ({ 
+	history, 
+	location 
+}) => {
+	const menuItems = [{
+		text: "Главная",
+		action() { history.push("/"); },
+		isActive: location.pathname === "/"
+	}, {
+		text: "Скачать",
+		action() { history.push("/download"); },
+		isActive: location.pathname === "/download"
+	}];
+
 	return (
 		<div>
-			<ul>
-				<li><Link to="/">Главная</Link></li>
-				<li><Link to="/download">Скачать</Link></li>
-			</ul>
+			<Menu
+				items={menuItems}
+				bordered
+				horizontal
+			/>
 			<Typography.Title 
 				fontWeight={900}
 				as="h1" 
@@ -49,4 +64,9 @@ const Header = () => {
 	);
 };
 
-export default Header;
+Header.propTypes = {
+	history: PropTypes.object.isRequired,
+	location: PropTypes.object.isRequired,
+};
+
+export default withRouter(Header);
