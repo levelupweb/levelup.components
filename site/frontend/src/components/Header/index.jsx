@@ -26,47 +26,51 @@ const Header = ({
 			/>
 			<Typography.Title 
 				fontWeight={900}
-				as="h1" 
-				header="Hello World" 
-				subheader="this is subheader" 
-			/> 
-			<Typography.Title 
+				as="h1"
+				header="Hello World"
+				subHeader="this is subHeader"
+			/>
+			<Typography.Title
 				fontWeight={900}
-				as="h2" 
-				header="Hello World" 
-				subheader="this is subheader" 
-			/> 
-			<Typography.Title 
+				as="h2"
+				header="Hello World"
+				subHeader="this is subHeader"
+			/>
+			<Typography.Title
 				fontWeight={900}
-				as="h3" 
-				header="Hello World" 
-				subheader="this is subheader" 
-			/> 
-			<Typography.Title 
+				as="h3"
+				header="Hello World"
+				subHeader="this is subHeader"
+			/>
+			<Typography.Title
 				fontWeight={900}
-				as="h4" 
-				header="Hello World" 
-				subheader="this is subheader" 
-			/> 
-			<Typography.Title 
+				as="h4"
+				header="Hello World"
+				subHeader="this is subHeader"
+			/>
+			<Typography.Title
 				fontWeight={900}
-				as="h5" 
-				header="Hello World" 
-				subheader="this is subheader" 
-			/> 
-			<Typography.Title 
+				as="h5"
+				header="Hello World"
+				subHeader="this is subHeader"
+			/>
+			<Typography.Title
 				fontWeight={900}
-				as="h6" 
-				header="Hello World" 
-				subheader="this is subheader" 
+				as="h6"
+				header="Hello World"
+				subHeader="this is subHeader"
 			/>
 		</div>
 	);
 };
 
+<<<<<<< HEAD
 Header.propTypes = {
 	history: PropTypes.object.isRequired,
 	location: PropTypes.object.isRequired,
 };
 
 export default withRouter(Header);
+=======
+export default Header;
+>>>>>>> d4b8d15404549243c14df967e49a5ce8e37683c1

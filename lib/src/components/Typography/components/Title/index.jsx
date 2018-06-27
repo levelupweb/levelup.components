@@ -4,8 +4,8 @@ import compStyles from "./styles.less";
 
 class Title extends React.Component {
 	render() {
-		const { 
-			subheader,
+		const {
+			subHeader,
 			as,
 			header,
 			styles,
@@ -18,8 +18,8 @@ class Title extends React.Component {
 		}
 
 		return (
-			<header 
-				style={styles} 
+			<header
+				style={styles}
 				className={`${compStyles.wrapper} ${className}`}
 			>
 				{React.createElement(as, {
@@ -27,7 +27,7 @@ class Title extends React.Component {
 					style: { fontWeight }
 				}, [
 					header,
-					subheader && <span className="subheader">{subheader}</span>
+					subHeader && <span className="subHeader">{subHeader}</span>
 				])}
 			</header>
 		);
@@ -36,7 +36,7 @@ class Title extends React.Component {
 
 Title.propTypes = {
 	as: PropTypes.string,
-	subheader: PropTypes.string,
+	subHeader: PropTypes.string,
 	header: PropTypes.string,
 	fontWeight: PropTypes.number,
 	className: PropTypes.string,
@@ -46,7 +46,7 @@ Title.propTypes = {
 Title.defaultProps = {
 	header: null,
 	isBold: false,
-	subheader: null,
+	subHeader: null,
 	className: "",
 	styles: {},
 	fontWeight: 400,
