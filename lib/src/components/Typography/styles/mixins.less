@@ -1,0 +1,298 @@
+@import "./variables.less";
+@import "../../../core/variables/responsive.less";
+
+.font-size-responsive(@size: 'base'; @multiplier: 1) when (@size = 'base') {
+  font-size: max(@min-font-size, (@font-size-base * @font-scaling-mobile * @multiplier));
+  line-height: @line-height-base * @line-height-scaling-mobile;
+  
+  @media @mobile {
+      font-size: max(@min-font-size, (@font-size-base * @font-scaling-mobile * @multiplier));
+      line-height: @line-height-base * @line-height-scaling-mobile;
+  }
+  @media @tablet {
+      font-size: max(@min-font-size, (@font-size-base * @font-scaling-tablet * @multiplier));
+      line-height: @line-height-base * @line-height-scaling-tablet;
+  }
+  @media @desktop {
+      font-size: max(@min-font-size, (@font-size-base * @font-scaling-desktop * @multiplier));
+      line-height: @line-height-base * @line-height-scaling-desktop;
+  }
+  @media @large {
+    font-size: max(@min-font-size, (@font-size-base * @font-scaling-large * @multiplier));
+    line-height: @line-height-base * @line-height-scaling-large;
+  }
+  @media @tv {
+      font-size: max(@min-font-size, (@font-size-base * @font-scaling-tv * @multiplier));
+      line-height: @line-height-base * @line-height-scaling-tv;
+  }
+}
+
+// - heading line heights
+.font-size-responsive(@size: 'base'; @multiplier: 1) when (@size = 'h1'), (@size = 'h2'), (@size = 'h3'), (@size = 'h4'), (@size = 'h5'), (@size = 'h6') {
+  line-height: @headings-line-height * @line-height-scaling-large;
+
+  .subheader {
+    display: block;
+    font-weight: 300;
+  }
+
+  @media @mobile {
+    line-height: @headings-line-height *  @line-height-scaling-mobile;
+  }
+  @media @tablet {
+    line-height: @headings-line-height * @line-height-scaling-tablet;
+  }
+  @media @desktop {
+    line-height: @headings-line-height * @line-height-scaling-desktop;
+  }
+  @media @large {
+    line-height: @headings-line-height * @line-height-scaling-large;
+  }
+  @media @tv {
+    line-height: @headings-line-height * @line-height-scaling-tv;
+  }
+}
+
+// - h1 font sizes
+.font-size-responsive(@size: 'base'; @multiplier: 1) when (@size = 'h1') {
+  font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-mobile * @multiplier));
+  
+  .subheader {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier));
+  }
+
+  @media @mobile {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-mobile * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tablet {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-tablet * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-tablet * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @desktop {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-desktop  * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-desktop * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @large {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-large  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-large * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tv {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-tv  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h1-relative * @font-scaling-tv * @multiplier * @subheader-multiplier))
+    }
+  }
+}
+
+
+// h2 sizes
+.font-size-responsive(@size: 'base'; @multiplier: 1) when (@size = 'h2') {
+  font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-mobile * @multiplier));
+  
+  .subheader {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier));
+  }
+
+  @media @mobile {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-mobile * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tablet {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-tablet * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-tablet * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @desktop {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-desktop  * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-desktop * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @large {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-large  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-large * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tv {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-tv  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h2-relative * @font-scaling-tv * @multiplier * @subheader-multiplier))
+    }
+  }
+}
+
+// h3 sizes
+
+.font-size-responsive(@size: 'base'; @multiplier: 1) when (@size = 'h3') {
+  font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-mobile * @multiplier));
+  
+  .subheader {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier));
+  }
+
+  @media @mobile {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-mobile * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tablet {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-tablet * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-tablet * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @desktop {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-desktop  * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-desktop * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @large {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-large  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-large * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tv {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-tv  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h3-relative * @font-scaling-tv * @multiplier * @subheader-multiplier))
+    }
+  }
+}
+
+// h4 sizes
+
+.font-size-responsive(@size: 'base'; @multiplier: 1) when (@size = 'h4') {
+  font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-mobile * @multiplier));
+  
+  .subheader {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier));
+  }
+
+  @media @mobile {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-mobile * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tablet {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-tablet * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-tablet * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @desktop {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-desktop  * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-desktop * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @large {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-large  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-large * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tv {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-tv  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h4-relative * @font-scaling-tv * @multiplier * @subheader-multiplier))
+    }
+  }
+}
+
+// h5 sizes
+
+.font-size-responsive(@size: 'base'; @multiplier: 1) when (@size = 'h5') {
+  font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-mobile * @multiplier));
+  
+  .subheader {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier));
+  }
+
+  @media @mobile {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-mobile * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tablet {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-tablet * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-tablet * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @desktop {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-desktop  * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-desktop * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @large {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-large  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-large * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tv {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-tv  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h5-relative * @font-scaling-tv * @multiplier * @subheader-multiplier))
+    }
+  }
+}
+
+// h6 sizes
+.font-size-responsive(@size: 'base'; @multiplier: 1) when (@size = 'h6') {
+  font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-mobile * @multiplier));
+  
+  .subheader {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier));
+  }
+
+  @media @mobile {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-mobile * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-mobile * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tablet {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-tablet * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-tablet * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @desktop {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-desktop  * @multiplier));
+      .subheader {
+        font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-desktop * @multiplier * @subheader-multiplier))
+      }
+  }
+  @media @large {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-large  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-large * @multiplier * @subheader-multiplier))
+    }
+  }
+  @media @tv {
+    font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-tv  * @multiplier));
+    .subheader {
+      font-size: max(@min-font-size, (@font-size-base * @font-size-h6-relative * @font-scaling-tv * @multiplier * @subheader-multiplier))
+    }
+  }
+}

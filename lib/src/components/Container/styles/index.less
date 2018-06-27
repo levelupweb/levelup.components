@@ -1,0 +1,30 @@
+@import "./mixins.less";
+@import "../../../core/variables/responsive.less";
+
+:local(.container) {
+
+  @media @mobile {
+    .createContainer(@mobileWidth);
+  }
+
+  @media @tablet {
+    .createContainer(@tableWidth);
+  }
+
+  @media @desktop {
+    .createContainer(@desktopWidth);
+  }
+
+  @media @large {
+    .createContainer(@largeWidth);
+  }
+
+  @media @tv {
+    .createContainer(@tvWidth);
+  }
+
+  &:local(.fluid) {
+    width: 97% !important;
+  }
+  
+} 

@@ -1,0 +1,20 @@
+// reset
+@import './reset.less';
+
+// global variables
+@import "./variables/index.less";
+
+@import "./mixins/font.less";
+@import "./variables/index.less";
+
+.font-face(@core-font-family, "Regular", 400, normal);
+.font-face(@core-font-family, "Bold", 600, normal);
+.font-face(@core-font-family, "ExtraBold", 800, normal);
+
+body {
+  .font(@core-font-family, @core-font-size, normal, normal); 
+
+  b, strong {
+    font-weight: bold;
+  }
+}

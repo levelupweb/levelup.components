@@ -1,21 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import Paragraph from "./components/Paragraph"; 
+// import Quote from "./components/Quote"; 
+import Title from "./components/Title"; 
 
-class Typography extends React.Component {
-	render() {
-		const { title } = this.props;
-		return (
-			<p>{title}</p>
-		);
-	}
-}
-
-Typography.propTypes = {
-	title: PropTypes.string
+export default {
+	Paragraph,
+	// Quote,
+	Title
 };
-
-Typography.propTypes = {
-	title: "Пустой тайтл"
-};
-
-export default Typography;

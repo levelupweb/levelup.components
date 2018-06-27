@@ -1,0 +1,52 @@
+@import "../../../core/variables/core.less";
+
+//== Responsive Type
+//
+//## Responsive, scale-based font-size adjustment for body text and headings
+//## Doesn't effect components where font-size is set based on @font-size-base
+
+@line-height-multiplier: 1.44;
+
+//** These are the default Bootstrap variables that Reponsive Type works from
+@font-color: @core-font-color;
+@font-size-base: @core-font-size;
+@line-height-base: 1.444444444;
+@line-height-computed: ceil(@font-size-base * @line-height-base);
+@headings-line-height: 1.2;
+
+//** The minimum accessible font size
+//** Fonts controlled by responsive type will never go mobilealler than this
+//** Generally this should be no mobilealler than 14px.
+@min-font-size: @core-min-font-size;
+
+//** Scales to determine font size adjustment
+//** These determine how much the text is scaled at each breakpoint, relative to @font-size-base.
+//** Generally, @font-scaling-tablet should be 1, and the other
+//** sizes should be tweaked to see what works best, according the fonts/scales used.
+@font-scaling-mobile: 0.888888888888;
+@font-scaling-tablet: 1;
+@font-scaling-desktop: 1;
+@font-scaling-large: 1.2;
+@font-scaling-tv: 1.3;
+
+//** Scales to determine line height adjustment
+//** These determine how much the line height is scaled at each breakpoint, relative to @line-height-base/@headings-line-height
+@line-height-scaling-tv : 0.90;
+@line-height-scaling-large: 0.92;
+@line-height-scaling-mobile: 0.96;
+@line-height-scaling-tablet: 1;
+@line-height-scaling-desktop: 1;
+
+//** Size of each type of heading relative to body text (base font size).
+//** The actual sizes will vary depending on the font scaling value for the currently active breakpoint.
+@font-size-h1-relative: 2.77777777777;
+@font-size-h2-relative: 2;
+@font-size-h3-relative: 1.55555555555;
+@font-size-h4-relative: 1.33333333333;
+@font-size-h5-relative: 1.16666666666;
+@font-size-h6-relative: 1;
+
+
+// subheaders
+
+@subheader-multiplier: 0.5;

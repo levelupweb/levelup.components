@@ -31,7 +31,7 @@ const webpack = {
 		alias: {
 			["@config"]: path.resolve("config.js"),
 			["@site"]: path.resolve("site/frontend/src"),
-			["levelup-components"]: path.resolve("lib/dist/main.js")
+			["levelup-components"]: path.resolve("lib/dist/main.js"),
 		},
 		extensions: ["*", ".js", ".jsx"]
 	}
