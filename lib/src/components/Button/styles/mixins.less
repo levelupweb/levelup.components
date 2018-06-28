@@ -1,0 +1,12 @@
+.createSize(
+  @ratio: 1, 
+  @aspect-ratio: 1.4, 
+  @default-padding-size, 
+  @default-font-size
+) {
+  padding-left: @default-padding-size * @ratio * @aspect-ratio;
+  padding-right: @default-padding-size * @ratio * @aspect-ratio;
+  padding-top: @default-padding-size * @ratio;
+  padding-bottom: @default-padding-size * @ratio;
+  font-size: @default-font-size * @ratio;
+}

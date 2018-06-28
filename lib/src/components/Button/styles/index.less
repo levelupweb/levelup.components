@@ -1,0 +1,202 @@
+@import "./variables.less";
+@import "./mixins.less";
+@import "../../../core/mixins/flex.less";
+@import "../../../core/variables/responsive.less";
+@import "../../../core/variables/ratios.less";
+
+:local(.button) {
+  .inline-flex();
+  .in-row();
+  .flex-align(center);
+  .flex-justify(center);
+  padding: @button-default-padding;
+  color: @button-default-text-color;
+  outline: @button-default-outline;
+  color: @button-default-text-color;
+  border: @button-default-border;
+  font-size: @button-default-font-size;
+  transition: @button-default-transition;
+  background: @button-default-background;
+  user-select: none;
+  will-change: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  .createSize(
+    @default-ratio, 
+    @button-aspect-ratio, 
+    @button-default-padding, 
+    @button-default-font-size
+  );
+
+  @media @tablet {
+    .createSize(
+      @tablet-ratio, 
+      @button-aspect-ratio, 
+      @button-default-padding, 
+      @button-default-font-size
+    );
+  }
+  @media @desktop {
+    .createSize(
+      @desktop-ratio, 
+      @button-aspect-ratio, 
+      @button-default-padding, 
+      @button-default-font-size
+    );
+  }
+  @media @large {
+    .createSize(
+      @large-ratio, 
+      @button-aspect-ratio, 
+      @button-default-padding, 
+      @button-default-font-size
+    );
+  }
+  @media @tv {
+    .createSize(
+      @tv-ratio, 
+      @button-aspect-ratio, 
+      @button-default-padding, 
+      @button-default-font-size
+    );
+  }
+
+  // types
+
+  &:local(.primary) {
+    color: @button-primary-text-color;
+    background: @button-primary-background;
+    border: @button-primary-border;
+  }
+
+  &:local(.secondary) {
+    color: @button-secondary-text-color;
+    background: @button-secondary-background;
+    border: @button-secondary-border;
+  }
+
+  &:local(.black) {
+    color: @button-black-text-color;
+    background: @button-black-background;
+    border: @button-black-border;
+  }
+
+  &:local(.positive) {
+    color: @button-positive-text-color;
+    background: @button-positive-background;
+    border: @button-positive-border;
+  }
+
+  &:local(.negative) {
+    color: @button-negative-text-color;
+    background: @button-negative-background;
+    border: @button-negative-border;
+  }
+
+  // modificators
+
+  &:local(.fluid) {
+    width: 100%;
+    display: flex;
+  }
+
+  &:local(.transparent) {
+    color: @button-transparent-text-color;
+    background: @button-transparent-background;
+    border: @button-transparent-border;
+  }
+
+  // states
+
+  &:hover {
+    background: @button-default-background-hover;
+    color: @button-default-text-color-hover;
+
+    &:local(.primary) {
+      background: @button-primary-background-hover;
+      color: @button-primary-text-color-hover;
+      border: @button-primary-border-hover;
+      box-shadow: @button-primary-box-shadow-hover;
+    }
+
+    &:local(.secondary) {
+      background: @button-secondary-background-hover;
+      color: @button-secondary-text-color-hover;
+      border: @button-secondary-border-hover;
+      box-shadow: @button-secondary-box-shadow-hover;
+    }
+
+    &:local(.black) {
+      background: @button-black-background-hover;
+      color: @button-black-text-color-hover;
+      box-shadow: @button-black-box-shadow-hover;
+    }
+
+    &:local(.positive) {
+      background: @button-positive-background-hover;
+      color: @button-positive-text-color-hover;
+      box-shadow: @button-positive-box-shadow-hover;
+    }
+
+    &:local(.negative) {
+      background: @button-negative-background-hover;
+      color: @button-negative-text-color-hover;
+      box-shadow: @button-negative-box-shadow-hover;
+    }
+
+    &:local(.transparent) {
+      background: @button-transparent-background-hover;
+      color: @button-transparent-text-color-hover;
+    }
+  }
+
+  &:active {
+    background: @button-default-background-active;
+    color: @button-default-text-color-active;
+
+    &:local(.primary) {
+      background: @button-primary-background-active;
+      color: @button-primary-text-color-active;
+      border: @button-primary-border-active;
+      box-shadow: @button-primary-box-shadow-active;
+    }
+
+    &:local(.secondary) {
+      background: @button-secondary-background-active;
+      color: @button-secondary-text-color-active;
+      border: @button-secondary-border-active;
+      box-shadow: @button-secondary-box-shadow-active;
+    }
+
+    &:local(.black) {
+      background: @button-black-background-active;
+      color: @button-black-text-color-active;
+      border: @button-black-border-active;
+      box-shadow: @button-black-box-shadow-active;
+    }
+
+    &:local(.transparent) {
+      background: @button-transparent-background-active;
+      color: @button-transparent-text-color-active;
+    }
+
+    &:local(.positive) {
+      background: @button-positive-background-active;
+      color: @button-positive-text-color-active;
+      border: @button-positive-border-active;
+      box-shadow: @button-positive-box-shadow-active;
+    }
+
+    &:local(.negative) {
+      background: @button-negative-background-active;
+      color: @button-negative-text-color-active;
+      border: @button-negative-border-active;
+      box-shadow: @button-negative-box-shadow-active;
+    }
+   
+  }
+}

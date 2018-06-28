@@ -1,0 +1,311 @@
+@import "../../../core/variables/colors.less";
+@import "../../../core/variables/typography.less";
+@import "../../../core/variables/ratios.less";
+
+// BUTTON RATIOS
+
+// aspect;
+@button-aspect-ratio: 1.4;
+
+// responsive;
+@button-default-ratio: 1;
+@button-tablet-ratio: 1.1;
+@button-desktop-ratio: 1.22;
+@button-large-ratio: 1.43;
+@button-tv-ratio: 1.6;
+
+// DEFAULT BUTTON
+
+// main-color;
+@button-default-color: lighten(@black, 10%);
+
+// background-color;
+@button-default-background: @lightGrey;
+
+// text-color;
+@button-default-text-color: @button-default-color;
+
+// font-size;
+@button-default-font-size: @typography-font-size * 0.75;
+@button-default-hover: darken(@button-default-color, 10%);
+@button-default-active: darken(@button-default-color, 10%);
+
+// outline;
+@button-default-outline: none;
+
+// border;
+@button-default-border-size: 1px;
+@button-default-border: @button-default-border-size solid transparent;
+
+// padding;
+@button-default-padding: 12px;
+@button-default-padding-top-bottom: @button-default-padding;
+@button-default-padding-left-right: @button-aspect-ratio * @button-default-padding;
+@button-padding: @button-default-padding-top-bottom @button-default-padding-left-right;
+
+// transition;
+@button-default-transition: .2s all ease-in-out;
+
+
+// DEFAULT BUTTON:hover
+
+// background;
+@button-default-background-hover: darken(@button-default-background, 10%);
+
+// text-color;
+@button-default-text-color-hover: lighten(@button-default-color, 10%);
+
+
+// DEFAULT BUTTON:active
+
+// background;
+@button-default-background-active: @black;
+
+// text-color;
+@button-default-text-color-active: lighten(@button-default-color, 100%);
+
+
+// PRIMARY BUTTON
+
+// main-color;
+@button-primary-color: @primary;
+
+// background-color;
+@button-primary-background: @button-primary-color;
+
+// text-color;
+@button-primary-text-color: lighten(@button-primary-color, 80%);
+
+// border;
+@button-primary-border: @button-default-border-size solid @button-primary-color;
+
+
+// PRIMARY BUTTON:hover;
+
+// background-color
+@button-primary-background-hover: transparent;
+
+// text-color
+@button-primary-text-color-hover: @button-primary-color;
+
+// border-color
+@button-primary-border-hover: @button-default-border-size solid @button-primary-color;
+
+// box-shadow inset
+@button-primary-box-shadow-hover: inset 0 0 0 1px @button-primary-color;
+
+
+// PRIMARY BUTTON:active
+
+// background;
+@button-primary-background-active: @button-primary-color;
+
+// text-color;
+@button-primary-text-color-active: lighten(@button-primary-color, 100%);
+
+// border;
+@button-primary-border-active: 1px solid @button-primary-color;
+
+// box-shadow;
+@button-primary-box-shadow-active: inset 0 0 0 1px @button-primary-color;
+
+
+// SECONDARY BUTTON
+
+// main-color;
+@button-secondary-color: @secondary;
+
+// background-color;
+@button-secondary-background: @button-secondary-color;
+
+// text-color;
+@button-secondary-text-color: darken(@secondary, 45%);
+
+// border;
+@button-secondary-border: @button-default-border-size solid @button-secondary-color;
+
+
+// SECONDARY BUTTON:hover;
+
+// background-color
+@button-secondary-background-hover: transparent;
+
+// text-color
+@button-secondary-text-color-hover: darken(@button-secondary-color, 10%);
+
+// border
+@button-secondary-border-hover: @button-default-border-size solid darken(@button-secondary-color, 5%);
+
+// box-shadow inset
+@button-secondary-box-shadow-hover: inset 0 0 0 1px @button-secondary-color;
+
+
+// SECONDARY BUTTON:active
+
+// background;
+@button-secondary-background-active: @button-secondary-color;
+
+// text-color;
+@button-secondary-text-color-active: lighten(@button-secondary-color, 100%);
+
+// border;
+@button-secondary-border-active: 1px solid @button-secondary-color;
+
+// box-shadow;
+@button-secondary-box-shadow-active: inset 0 0 0 1px @button-secondary-color;
+
+
+// BLACK BUTTON
+
+// main-color;
+@button-black-color: @black;
+
+// background-color;
+@button-black-background: @button-black-color;
+
+// text-color;
+@button-black-text-color: #fff;
+
+// border;
+@button-black-border: @button-default-border-size solid @button-black-color;
+
+
+// BLACK BUTTON:hover
+
+// background-color;
+@button-black-background-hover: transparent;
+
+// background-color;
+@button-black-text-color-hover: @button-black-color;
+
+// box-shadow inset
+@button-black-box-shadow-hover: inset 0 0 0 1px @button-black-color;
+
+
+// BLACK BUTTON:active
+
+// background;
+@button-black-background-active: @button-black-color;
+
+// text-color;
+@button-black-text-color-active: lighten(@button-black-color, 100%);
+
+// border;
+@button-black-border-active: 1px solid @button-black-color;
+
+// box-shadow;
+@button-black-box-shadow-active: inset 0 0 0 1px @button-black-color;
+
+
+// POSITIVE BUTTON
+
+// main-color;
+@button-positive-color: @positive;
+
+// background-color;
+@button-positive-background: @button-positive-color;
+
+// text-color;
+@button-positive-text-color: #fff;
+
+// border;
+@button-positive-border: @button-default-border-size solid @button-positive-color;
+
+
+// POSITIVE BUTTON:hover
+
+// background-color;
+@button-positive-background-hover: transparent;
+
+// background-color;
+@button-positive-text-color-hover: @button-positive-color;
+
+// box-shadow inset
+@button-positive-box-shadow-hover: inset 0 0 0 1px @button-positive-color;
+
+
+// POSITIVE BUTTON:active
+
+// background;
+@button-positive-background-active: @button-positive-color;
+
+// text-color;
+@button-positive-text-color-active: lighten(@button-positive-color, 100%);
+
+// border;
+@button-positive-border-active: 1px solid @button-positive-color;
+
+// box-shadow;
+@button-positive-box-shadow-active: inset 0 0 0 1px @button-positive-color;
+
+
+// NEGATIVE BUTTON
+
+// main-color;
+@button-negative-color: @negative;
+
+// background-color;
+@button-negative-background: @button-negative-color;
+
+// text-color;
+@button-negative-text-color: #fff;
+
+// border;
+@button-negative-border: @button-default-border-size solid @button-negative-color;
+
+
+// NEGATIVE BUTTON:hover
+
+// background-color;
+@button-negative-background-hover: transparent;
+
+// background-color;
+@button-negative-text-color-hover: @button-negative-color;
+
+// box-shadow inset
+@button-negative-box-shadow-hover: inset 0 0 0 1px @button-negative-color;
+
+
+// NEGATIVE BUTTON:active
+
+// background;
+@button-negative-background-active: @button-negative-color;
+
+// text-color;
+@button-negative-text-color-active: lighten(@button-negative-color, 100%);
+
+// border;
+@button-negative-border-active: 1px solid @button-negative-color;
+
+// box-shadow;
+@button-negative-box-shadow-active: inset 0 0 0 1px @button-negative-color;
+
+
+// TRANSPARENT BUTTON
+
+// background-color;
+@button-transparent-background: transparent;
+
+// text-color;
+@button-transparent-text-color: lighten(@black, 34%);
+
+// border;
+@button-transparent-border: @button-default-border-size solid transparent;
+
+
+// TRANSPARENT BUTTON:hover
+
+// background-color;
+@button-transparent-background-hover: @lightGrey;
+
+// text-color;
+@button-transparent-text-color-hover: @black;
+
+
+// TRANSPARENT BUTTON:active
+
+// background;
+@button-transparent-background-active: @grey;
+
+// text-color;
+@button-transparent-text-color-active: @black;
