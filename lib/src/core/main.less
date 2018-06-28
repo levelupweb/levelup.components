@@ -7,12 +7,15 @@
 // font mixin
 @import "./mixins/font.less";
 
-.font-face(@core-font-family, "Regular", 400, normal);
-.font-face(@core-font-family, "Bold", 600, normal);
-.font-face(@core-font-family, "ExtraBold", 800, normal);
+// main styles for page
+
+// font defining
+.font-face(@typography-font-family, "Regular", 400, normal);
+.font-face(@typography-font-family, "Bold", 600, normal);
+.font-face(@typography-font-family, "ExtraBold", 800, normal);
 
 body {
-  .font(@core-font-family, @core-font-size, normal, normal);
+  .font(@typography-font-family, @typography-font-size, normal, normal);
 
   b, strong {
     font-weight: bold;

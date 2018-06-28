@@ -1,4 +1,4 @@
-@import "../../../core/variables/core.less";
+@import "../../../core/variables/typography.less";
 
 //== Responsive Type
 //
@@ -8,8 +8,8 @@
 @line-height-multiplier: 1.44;
 
 //** These are the default Bootstrap variables that Reponsive Type works from
-@font-color: @core-font-color;
-@font-size-base: @core-font-size;
+@font-color: @typography-font-color;
+@font-size-base: @typography-font-size;
 @line-height-base: 1.444444444;
 @line-height-computed: ceil(@font-size-base * @line-height-base);
 @headings-line-height: 1.2;
@@ -17,7 +17,7 @@
 //** The minimum accessible font size
 //** Fonts controlled by responsive type will never go mobilealler than this
 //** Generally this should be no mobilealler than 14px.
-@min-font-size: @core-min-font-size;
+@min-font-size: @typography-min-font-size;
 
 //** Scales to determine font size adjustment
 //** These determine how much the text is scaled at each breakpoint, relative to @font-size-base.

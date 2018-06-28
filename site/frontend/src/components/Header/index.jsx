@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import { Typography, Menu } from "levelup-components";
+import { Typography, Menu, Button } from "levelup-components";
 
 const Header = ({ 
 	history, 
@@ -24,6 +24,13 @@ const Header = ({
 				bordered
 				horizontal
 			/>
+			<Button>I'm default</Button> 
+			<Button isPrimary>I'm primary</Button> 
+			<Button isSecondary>I'm Secondary</Button> 
+			<Button isBlack>I'm Black Button</Button> 
+			<Button isPositive>I'm Positive Button</Button> 
+			<Button isNegative>I'm Negative Button</Button> 
+			<Button isTransparent>I'm Transparent Button</Button> 
 			<Typography.Title 
 				fontWeight={900}
 				as="h1"
@@ -64,13 +71,9 @@ const Header = ({
 	);
 };
 
-<<<<<<< HEAD
 Header.propTypes = {
 	history: PropTypes.object.isRequired,
 	location: PropTypes.object.isRequired,
 };
 
 export default withRouter(Header);
-=======
-export default Header;
->>>>>>> d4b8d15404549243c14df967e49a5ce8e37683c1
