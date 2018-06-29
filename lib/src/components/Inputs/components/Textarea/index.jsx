@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./styles.less";
+import styles from "./styles/index.less";
 
 class TextArea extends React.Component {
 	constructor(props) {
@@ -11,17 +11,19 @@ class TextArea extends React.Component {
 	}
 	render() {
 		return (
-			<textarea />
+			<textarea
+				className={styles.textArea}
+			/>
 		);
 	}
 }
 
 TextArea.propTypes = {
-
+	onFocus: PropTypes.func
 };
 
 TextArea.defaultProps = {
-
+	onFocus: null
 };
 
 export default TextArea;

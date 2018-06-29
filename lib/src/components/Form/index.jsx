@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./styles.less";
+import styles from "./styles/index.less";
 
 class Form extends React.Component {
 	constructor(props) {
@@ -11,17 +11,19 @@ class Form extends React.Component {
 	}
 	render() {
 		return (
-			<form/>
+			<form
+				className={styles.form}
+			/>
 		);
 	}
 }
 
 Form.propTypes = {
-
+	onSubmit: PropTypes.func
 };
 
 Form.defaultProps = {
-
+	onSubmit: null
 };
 
 export default Form;

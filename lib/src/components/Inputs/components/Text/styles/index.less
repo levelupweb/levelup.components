@@ -1,3 +1,47 @@
-@import "../../../../core/mixins/flex.less";
-@import "../../../../core/variables/responsive.less";
-@import "../../../../core/variables/ratios.less";
+@import "../../../../../core/variables/ratios.less";
+@import "../../../../../core/main.less";
+
+:local(.input){
+		position: relative;
+		margin: 10px 0;
+		input{
+			position: relative;
+			z-index: 1;
+			outline: none;
+			width: 100%;
+			padding: 16px 15px 4px;
+			border: 1px solid fadeout(@primary, 60%);
+			border-bottom: 3px solid fadeout(@primary, 30%);
+			border-radius: 4px 4px 0 0;
+		label {
+			background-color: #fff;
+			position: absolute;
+			z-index: 2;
+			left: 16.5px;
+			bottom: 9.5px;
+			transition: @transition;
+			&::before{
+				content: '';
+				position: absolute;
+				z-index: -1;
+				top: -25px;
+				left: -10px;
+				height: 1px;
+				background-color: #fff;
+				transition: @transition;
+			}
+			&:local(.active) {
+				.font(@typography-font-family, @typography-min-font-size, normal, normal);
+				bottom: 40px;
+				left: 12px;
+				&::before{
+					top: 50%;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 110%;
+				}
+			}
+		}
+	}
+}
+

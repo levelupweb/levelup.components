@@ -4,7 +4,6 @@ import Search from "./components/Search";
 import FileLoad from "./components/File";
 import Radio from "./components/Radio";
 import CheckBox from "./components/CheckBox";
-import Form from "./components/Form";
 import DropDown from "./components/DropDown";
 
 
@@ -15,6 +14,5 @@ export default {
 	Radio,
 	CheckBox,
 	FileLoad,
-	DropDown,
-	Form
+	DropDown
 };

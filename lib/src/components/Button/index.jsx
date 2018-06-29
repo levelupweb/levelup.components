@@ -4,7 +4,7 @@ import childrenShape from "../../shapes/children";
 import styles from "./styles/index.less";
 import { className } from "./utils";
 import Icon from "../Icon";
- 
+
 class Button extends React.Component {
 	constructor(props) {
 		super(props);
@@ -21,7 +21,7 @@ class Button extends React.Component {
 		if (onClick && typeof onClick === "function") {
 			onClick();
 		}
-	} 
+	}
 
 	handleBlur() {
 		const { onBlur } = this.props;
@@ -29,7 +29,7 @@ class Button extends React.Component {
 		if (onBlur && typeof onBlur === "function") {
 			onBlur();
 		}
-	} 
+	}
 
 	handleMouseDown() {
 		const { onMouseDown } = this.props;
@@ -37,7 +37,7 @@ class Button extends React.Component {
 		if (onMouseDown && typeof onMouseDown === "function") {
 			onMouseDown();
 		}
-	} 
+	}
 
 	handleMouseUp() {
 		const { onMouseUp } = this.props;
@@ -45,7 +45,7 @@ class Button extends React.Component {
 		if (onMouseUp && typeof onMouseUp === "function") {
 			onMouseUp();
 		}
-	} 
+	}
 
 	handleFocus() {
 		const { onFocus } = this.props;
@@ -53,23 +53,23 @@ class Button extends React.Component {
 		if (onFocus && typeof onFocus === "function") {
 			onFocus();
 		}
-	} 
-  
+	}
+
 	renderIcon() {
 		const { icon } = this.props;
 
 		if (icon) {
 			return (
-				<Icon 
-					icon={icon} 
-					size={18} 
+				<Icon
+					icon={icon}
+					size={18}
 				/>
 			);
 		}
 
 		return null;
 	}
-  
+
 	renderChild() {
 		const { children } = this.props;
 
@@ -80,7 +80,7 @@ class Button extends React.Component {
 			</span>
 		);
 	}
-  
+
 	render() {
 		const {
 			as,
@@ -97,7 +97,7 @@ class Button extends React.Component {
 			style,
 		}, this.renderChild());
 	}
-  
+
 }
 
 Button.propTypes = {

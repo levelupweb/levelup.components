@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./styles.less";
+import styles from "./styles/index.less";
 
 class DropDown extends React.Component {
 	constructor(props) {
@@ -11,17 +11,19 @@ class DropDown extends React.Component {
 	}
 	render() {
 		return (
-			<div />
+			<div
+				className={styles.dropDown}
+			/>
 		);
 	}
 }
 
 DropDown.propTypes = {
-
+	onFocus: PropTypes.func
 };
 
 DropDown.defaultProps = {
-
+	onFocus: null
 };
 
 export default DropDown;

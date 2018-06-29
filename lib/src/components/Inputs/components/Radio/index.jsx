@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./styles.less";
+import styles from "./styles/index.less";
 
 class Radio extends React.Component {
 	constructor(props) {
@@ -13,17 +13,18 @@ class Radio extends React.Component {
 		return (
 			<input
 				type="radio"
+				className={styles.radio}
 			/>
 		);
 	}
 }
 
 Radio.propTypes = {
-
+	type: PropTypes.string
 };
 
 Radio.defaultProps = {
-
+	type: "radio"
 };
 
 export default Radio;

@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import { Typography, Menu, Button } from "levelup-components";
+import { Typography, Menu, Button, Inputs } from "levelup-components";
 
-const Header = ({ 
-	history, 
-	location 
+const Header = ({
+	history,
+	location
 }) => {
 	const menuItems = [{
 		text: "Главная",
@@ -24,14 +24,14 @@ const Header = ({
 				bordered
 				horizontal
 			/>
-			<Button>I'm default</Button> 
-			<Button isPrimary>I'm primary</Button> 
-			<Button isSecondary>I'm Secondary</Button> 
-			<Button isBlack>I'm Black Button</Button> 
-			<Button isPositive>I'm Positive Button</Button> 
-			<Button isNegative>I'm Negative Button</Button> 
-			<Button isTransparent>I'm Transparent Button</Button> 
-			<Typography.Title 
+			<Button>I'm default</Button>
+			<Button isPrimary>I'm primary</Button>
+			<Button isSecondary>I'm Secondary</Button>
+			<Button isBlack>I'm Black Button</Button>
+			<Button isPositive>I'm Positive Button</Button>
+			<Button isNegative>I'm Negative Button</Button>
+			<Button isTransparent>I'm Transparent Button</Button>
+			<Typography.Title
 				fontWeight={900}
 				as="h1"
 				header="Hello World"
@@ -67,7 +67,15 @@ const Header = ({
 				header="Hello World"
 				subHeader="this is subHeader"
 			/>
+			<Inputs.TextInput />
+			<Inputs.TextArea />
+			<Inputs.Search />
+			<Inputs.CheckBox />
+			<Inputs.Radio />
+			<Inputs.FileLoad />
+			<Inputs.DropDown />
 		</div>
+
 	);
 };
 
