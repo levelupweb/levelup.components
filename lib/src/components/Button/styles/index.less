@@ -97,6 +97,32 @@
     border: @button-negative-border;
   }
 
+  &:local(.loading) {
+    position: relative;
+    &:local(:hover) {
+      cursor: wait;
+      background: @button-default-background;
+      &:local(.black) {
+        background: @button-black-background;
+      }
+      &:local(.negative) {
+        background: @button-negative-background;
+      }
+      &:local(.positive) {
+        background: @button-positive-background;
+      }
+      &:local(.secondary) {
+        background: @button-secondary-background;
+      }
+      &:local(.primary) {
+        background: @button-primary-background;
+      }
+      &:local(.transparent) {
+        background: @button-transparent-background;
+      }
+    }
+  }
+
   // modificators
 
   &:local(.fluid) {
@@ -197,6 +223,18 @@
       border: @button-negative-border-active;
       box-shadow: @button-negative-box-shadow-active;
     }
-   
+  }
+
+  :local(.hided) {
+    opacity: 0;
+    background: transparent;
+  }
+
+  span:not(:local(.loader)) {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
   }
 }
+

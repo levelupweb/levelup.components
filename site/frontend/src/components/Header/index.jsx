@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import { Typography, Menu, Button } from "levelup-components";
+import { Typography, Menu, Button, Loader } from "levelup-components";
 
 const Header = ({ 
 	history, 
@@ -30,7 +30,19 @@ const Header = ({
 			<Button isBlack>I'm Black Button</Button> 
 			<Button isPositive>I'm Positive Button</Button> 
 			<Button isNegative>I'm Negative Button</Button> 
-			<Button isTransparent>I'm Transparent Button</Button> 
+			<Button isTransparent>I'm Transparent Button</Button>
+
+			<Button isLoading>123</Button>
+			<Button isPrimary isLoading >I'm primary</Button>
+			<Button isSecondary isLoading>123</Button> 
+			<Button isBlack isLoading >123</Button>
+			<Button isPositive isLoading>123</Button> 
+			<Button isNegative isLoading>123</Button> 
+			<Button isTransparent isLoading>123</Button>
+
+			<Loader active />
+			<Loader active compact isBlack/>
+
 			<Typography.Title 
 				fontWeight={900}
 				as="h1"

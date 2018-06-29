@@ -4,7 +4,8 @@ import childrenShape from "../../shapes/children";
 import styles from "./styles/index.less";
 import { className } from "./utils";
 import Icon from "../Icon";
- 
+import Loader from "../Loader/index";
+
 class Button extends React.Component {
 	constructor(props) {
 		super(props);
@@ -21,7 +22,7 @@ class Button extends React.Component {
 		if (onClick && typeof onClick === "function") {
 			onClick();
 		}
-	} 
+	}
 
 	handleBlur() {
 		const { onBlur } = this.props;
@@ -29,7 +30,7 @@ class Button extends React.Component {
 		if (onBlur && typeof onBlur === "function") {
 			onBlur();
 		}
-	} 
+	}
 
 	handleMouseDown() {
 		const { onMouseDown } = this.props;
@@ -37,7 +38,7 @@ class Button extends React.Component {
 		if (onMouseDown && typeof onMouseDown === "function") {
 			onMouseDown();
 		}
-	} 
+	}
 
 	handleMouseUp() {
 		const { onMouseUp } = this.props;
@@ -45,7 +46,7 @@ class Button extends React.Component {
 		if (onMouseUp && typeof onMouseUp === "function") {
 			onMouseUp();
 		}
-	} 
+	}
 
 	handleFocus() {
 		const { onFocus } = this.props;
@@ -53,51 +54,74 @@ class Button extends React.Component {
 		if (onFocus && typeof onFocus === "function") {
 			onFocus();
 		}
-	} 
-  
+	}
+
 	renderIcon() {
 		const { icon } = this.props;
 
 		if (icon) {
-			return (
-				<Icon 
-					icon={icon} 
-					size={18} 
-				/>
-			);
+			return <Icon icon={icon} size={18} />;
 		}
 
 		return null;
 	}
-  
+
 	renderChild() {
-		const { children } = this.props;
+		const {
+			children,
+			isLoading,
+			isBlack,
+			isPrimary,
+			isTransparent,
+			isSecondary,
+			isNegative,
+			isPositive
+		} = this.props;
 
 		return (
 			<span className={styles.inner}>
-				{this.renderIcon()}
-				{children}
+				<span className={isLoading && styles.hided}>
+					{this.renderIcon()}
+					{children}
+				</span>
+				{isLoading && (
+					<span className={styles.loader}>
+						<Loader
+							active
+							compact
+							isAbsolute
+							isLight={
+								isBlack || isPrimary || isSecondary || isNegative || isPositive
+							}
+							isBlack={isTransparent}
+						/>
+					</span>
+				)}
 			</span>
 		);
 	}
-  
-	render() {
-		const {
-			as,
-			style
-		} = this.props;
 
-		return React.createElement(as, {
-			className: className(this.props),
-			onClick: this.handleClick,
-			onBlur: this.handleBlur,
-			onMouseUp: this.handleMouseUp,
-			onMouseDown: this.handleMouseDown,
-			onFocus: this.handleFocus,
-			style,
-		}, this.renderChild());
+	render() {
+		const { as, style, children } = this.props;
+
+		if (!children) {
+			return null;
+		}
+
+		return React.createElement(
+			as,
+			{
+				className: className(this.props),
+				onClick: this.handleClick,
+				onBlur: this.handleBlur,
+				onMouseUp: this.handleMouseUp,
+				onMouseDown: this.handleMouseDown,
+				onFocus: this.handleFocus,
+				style
+			},
+			this.renderChild()
+		);
 	}
-  
 }
 
 Button.propTypes = {
@@ -113,12 +137,13 @@ Button.propTypes = {
 	isFluid: PropTypes.bool,
 	isTransparent: PropTypes.bool,
 	isSecondary: PropTypes.bool,
+	isLoading: PropTypes.bool,
 	isBlack: PropTypes.bool,
 	children: childrenShape.isRequired,
 	icon: PropTypes.string,
 	as: PropTypes.string,
 	className: PropTypes.string,
-	style: PropTypes.object,
+	style: PropTypes.object
 };
 
 Button.defaultProps = {
@@ -135,11 +160,11 @@ Button.defaultProps = {
 	isTransparent: false,
 	isFluid: false,
 	isSecondary: false,
-	children: childrenShape,
+	isLoading: false,
 	icon: null,
 	as: "button",
 	className: "",
-	style: {},
+	style: {}
 };
 
 export default Button;

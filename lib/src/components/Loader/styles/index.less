@@ -1,0 +1,71 @@
+@import "./variables.less";
+@import "../../../core/variables/colors.less";
+
+:local(.loader) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+	width: @loading-dots-width;
+  :local(.dots) {
+    background: @primary;
+    border-radius: 50%;
+		width: @loading-dot-size;
+		height: @loading-dot-size;
+		border-radius: 50%;
+		transform: scale(0);
+		.animation();
+		&:nth-child(2) {
+				.animation(@dots-animation-speed*.3);
+		}
+		&:nth-child(3) {
+				.animation(@dots-animation-speed*.6);
+		}
+	}
+	
+  .animation(@delay: 0ms) {
+      animation: fx @dots-animation-speed ease infinite @delay;
+	}
+
+	// TYPES
+
+	&:local(.compact) {
+		width: @loading-dots-width-compact !important;
+
+		:local(.dots) {
+			width: @loading-dot-size-compact !important;
+			height: @loading-dot-size-compact !important;
+		}
+	}
+
+	// COLOR 
+
+	&:local(.black) {
+		:local(.dots) {
+			background: @black;
+		}
+	}
+
+	&:local(.light) {
+		:local(.dots) {
+			background: @lightGrey;
+		}
+	}
+
+	&:local(.absolute) {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		margin-left: -40px;
+	}
+}
+
+@keyframes fx {
+  50% {
+      transform: scale(0.5);
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
