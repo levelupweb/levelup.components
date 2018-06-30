@@ -24,7 +24,6 @@ CheckBox.propTypes = {
 };
 
 CheckBox.defaultProps = {
-
 };
 
 export default CheckBox;

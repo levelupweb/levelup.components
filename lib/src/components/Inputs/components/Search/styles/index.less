@@ -1,6 +1,18 @@
-@import "../../../../../core/main.less";
 @import "../../../../../core/variables/ratios.less";
+@import "../../../../../core/variables/typography.less";
+@import "../../../../../core/variables/common.less";
+@import "../../../../../core/variables/colors.less";
+@import "../../../../../core/variables/inputs.less";
+@import "../../../../../core/mixins/font.less";
 
 :local(.search){
-	border-color: blue;
+	position: relative;
+	margin: 20px 0;
+	:local(.field){
+		label{
+			&:local(.active){
+				display: none;
+			}
+		}
+	}
 }

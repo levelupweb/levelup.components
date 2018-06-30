@@ -1,7 +1,49 @@
-@import "../../../../../core/main.less";
-@import "../../../../../core/variables/ratios.less";
+@import "../../../../../core/variables/colors.less";
+@import "../../../../../core/variables/common.less";
+@import "../../../../../core/variables/inputs.less";
+@import "../../../../../core/variables/typography.less";
+@import "../../../../../core/mixins/font.less";
 
 :local(.textArea) {
-	margin: 10px;
-	border: 1px solid fadeout(@primary, 60%);
+	position: relative;
+	margin: 10px 0;
+	textarea{
+		position: relative;
+		z-index: 1;
+		padding: 15px;
+		width: 100%;
+		border: @borders;
+		border-radius: @border-radius-all;
+		resize: none;
+	}
+	span{
+		display: block;
+		position: absolute;
+		z-index: 2;
+		top: 19.5px;
+		left: 15px;
+		transition: @transition;
+		&::before{
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: -25px;
+			left: -10px;
+			height: 1px;
+			background-color: #fff;
+			transition: @transition;
+		}
+		&:local(.active){
+			.font(@typography-font-family, @typography-min-font-size, normal, normal);
+			top: -6px;
+			left: 50%;
+			transform: translateX(-50%);
+			&::before{
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 110%;
+			}
+		}
+	}
 }

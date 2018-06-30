@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./styles/index.less";
 
 class Icon extends React.Component {
 	constructor(props) {
@@ -20,14 +21,6 @@ class Icon extends React.Component {
 		const { icon } = this.props;
 
 		switch (icon) {
-		case "my-icon":
-			return (
-				<g><path d="M7.41 7.84l4.59 4.58 4.59-4.58 1.41 1.41-6 6-6-6z" /></g>
-			);
-		case "another-icon":
-			return (
-				<g><path d="M7.41 15.41l4.59-4.58 4.59 4.58 1.41-1.41-6-6-6 6z" /></g>
-			);
 		case "course":
 			return (
 				<g><path d="M9 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm5-3c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-2-7c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" /></g>
@@ -204,6 +197,10 @@ class Icon extends React.Component {
 			return (
 				<g><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4v-1.9h-4c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9h-4c-1.71 0-3.1-1.39-3.1-3.1zm4.1 1h8v-2h-8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4v1.9h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z" /></g>
 			);
+		case "search":
+			return (
+				<g><path d="M15.5 14h-.79l-.28-.27c.98-1.14 1.57-2.62 1.57-4.23 0-3.59-2.91-6.5-6.5-6.5s-6.5 2.91-6.5 6.5 2.91 6.5 6.5 6.5c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99 1.49-1.49-4.99-5zm-6 0c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5 4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z"></path></g>
+			);
 		default:
 			return null;
 		}
@@ -216,26 +213,16 @@ class Icon extends React.Component {
 			className
 		} = this.props;
 
-		const defaultStyles = {
-			fill: "currentcolor",
-			verticalAlign: "middle",
-			width: size,
-			height: size
-		};
-
 		return (
-			<span 
-				onClick={this.handleClick} 
-				className={className}
+			<span
+				onClick={this.handleClick}
+				className={`${className} ${styles.icon}`}
 			>
 				<svg
 					viewBox="0 0 24 24"
 					preserveAspectRatio="xMidYMid meet"
-					fit
-					style={{
-						...defaultStyles,
-						...style,
-					}}
+					style={style}
+					fill="currentcolor"
 				>
 					{this.renderIcon()}
 				</svg>

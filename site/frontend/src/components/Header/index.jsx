@@ -67,13 +67,9 @@ const Header = ({
 				header="Hello World"
 				subHeader="this is subHeader"
 			/>
-			<Inputs.TextInput />
-			<Inputs.TextArea />
-			<Inputs.Search />
+			<Inputs.TextInput label="Input me" />
+			<Inputs.TextArea label="Textarea" />
 			<Inputs.CheckBox />
-			<Inputs.Radio />
-			<Inputs.FileLoad />
-			<Inputs.DropDown />
 		</div>
 
 	);
