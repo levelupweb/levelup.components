@@ -67,9 +67,26 @@ const Header = ({
 				header="Hello World"
 				subHeader="this is subHeader"
 			/>
+			<Inputs.DropDown  options={[
+				{
+					text: "М",
+					value: "male",
+					key: "male",
+				},
+				{
+					text: "F",
+					value: "female",
+					key: "female"
+				}
+			]} />
 			<Inputs.TextInput label="Input me" />
 			<Inputs.TextArea label="Textarea" />
-			<Inputs.CheckBox />
+			<Inputs.Search label="Search..." />
+			<Inputs.CheckBox value={true} onChange={(checked) => console.log(checked)}/>
+			<Inputs.Radio />
+			<Inputs.FileLoad />
+
+
 		</div>
 
 	);

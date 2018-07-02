@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server-build": "webpack --config=webpack.config.server.js",
-    "server-run": "node ./site/backend/dist/build.js",
+    "server-run": "nodemon ./site/backend/dist/build.js",
     "site-build": "webpack --config=webpack.config.site.js",
     "lib-build": "webpack --config=webpack.config.lib.js"
   },

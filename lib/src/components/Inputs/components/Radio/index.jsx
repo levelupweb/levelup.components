@@ -11,10 +11,26 @@ class Radio extends React.Component {
 	}
 	render() {
 		return (
-			<input
-				type="radio"
-				className={styles.radio}
-			/>
+			<div>
+				<div className={styles.radio}>
+					<input
+						name="radio"
+						id="radio"
+						type="radio"
+					/>
+					<span />
+					<label htmlFor="radio">Some label for radio</label>
+				</div>
+				<div className={styles.radio}>
+					<input
+						name="radio"
+						id="radio1"
+						type="radio"
+					/>
+					<span />
+					<label htmlFor="radio1">Some label for radio</label>
+				</div>
+			</div>
 		);
 	}
 }
@@ -24,7 +40,7 @@ Radio.propTypes = {
 };
 
 Radio.defaultProps = {
-	type: "radio"
+
 };
 
 export default Radio;

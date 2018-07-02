@@ -1,9 +1,67 @@
 @import "../../../../../core/variables/ratios.less";
+@import "../../../../../core/variables/inputs.less";
 @import "../../../../../core/variables/typography.less";
 @import "../../../../../core/variables/common.less";
 @import "../../../../../core/variables/colors.less";
 @import "../../../../../core/mixins/font.less";
 
 :local(.checkBox){
-	border-color: blue;
+	display: flex;
+	margin: 10px 0;
+	width: 70%;
+	align-items: center;
+	justify-content: space-around;
+	input{
+		display: none;
+		&:checked+span{
+			background-color: @primary;
+			border-color: @primary;
+			&::before{
+				width: 7px;
+				top: 9px;
+				left: 2px;
+			}
+			&::after{
+				width: 12px;
+				bottom: 8px;
+				left: 4.5px;
+			}
+		}
+	}
+	span{
+		position: relative;
+		width: @typography-font-size;
+		height: @typography-font-size;
+		border: 2px solid @checkbox;
+		border-radius: @border-radius-all;
+		transition: @transition;
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 2px;
+			border-radius: 10px;
+			background-color: #fff;
+			transform: rotate(45deg);
+			transition: @transition;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 2px;
+			border-radius: 5px;
+			background-color: #fff;
+			transform: rotate(-60deg);
+			transition: @transition;
+		}
+	}
+	label{
+		text-align: center;
+		flex-basis: 50%;
+	}
 }
