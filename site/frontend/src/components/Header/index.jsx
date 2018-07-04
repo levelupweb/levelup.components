@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { Typography, Menu, Button, Inputs } from "levelup-components";
+import Form from "../../../../../lib/src/components/Form";
+
+
 
 const Header = ({
 	history,
@@ -69,26 +72,29 @@ const Header = ({
 			/>
 			<Inputs.DropDown  options={[
 				{
-					text: "М",
-					value: "male",
-					key: "male",
+					text: "Gunslinger #1",
+					value: "Roland",
+					key: "roland",
 				},
 				{
-					text: "F",
-					value: "female",
-					key: "female"
+					text: "Gunslinger #2",
+					value: "Eddie",
+					key: "eddie"
+				},
+				{
+					text: "Gunslinger #3",
+					value: "Jake",
+					key: "jake"
 				}
 			]} />
 			<Inputs.TextInput label="Input me" />
 			<Inputs.TextArea label="Textarea" />
 			<Inputs.Search label="Search..." />
-			<Inputs.CheckBox value={true} onChange={(checked) => console.log(checked)}/>
+			<Inputs.CheckBox value={true}/>
 			<Inputs.Radio />
 			<Inputs.FileLoad />
-
-
+			<Form />
 		</div>
-
 	);
 };
 

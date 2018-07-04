@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./styles/index.less";
-import { log } from "util";
 import randomNumber from "../../../../utils/randomNumber";
 
 class CheckBox extends React.Component {
@@ -16,7 +15,6 @@ class CheckBox extends React.Component {
 			id: null
 		};
 	}
-
 
 	componentDidMount() {
 		this.setState({
@@ -62,7 +60,7 @@ class CheckBox extends React.Component {
 	}
 
 	render() {
-		const { id, } = this.state;
+		const { id } = this.state;
 		const value = this.getValue();
 
 		if (!id) {
