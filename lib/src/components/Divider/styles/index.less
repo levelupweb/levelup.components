@@ -1,0 +1,163 @@
+@import "../../../core/variables/colors.less";
+
+:local(.divider) {
+  height: 32px;
+  margin: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  :local(.divLeft) {
+    height: 1px;
+    width: 50%;
+    background-color: @black;
+  }
+
+  :local(.divRight) {
+    height: 1px;
+    width: 50%;
+    background-color: @black;
+  }
+
+  &:local(.text) {
+    :local(.divLeft) {
+      height: 1px;
+      width: 50%;
+      margin: 0 10px;
+      background-color: @black;
+    }
+
+    :local(.divRight) {
+      height: 1px;
+      width: 50%;
+      margin: 0 10px;
+      background-color: @black;
+    }
+
+    :local(.divIcon) {
+      max-width: 32px;
+      max-height: 32px;
+    }
+
+    :local(.divText) {
+      color: @black;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 10px;
+    }
+  }
+
+  &:local(.textIcon) {
+    :local(.divLeft) {
+      height: 1px;
+      width: 50%;
+      margin: 0 10px;
+      background-color: @black;
+    }
+
+    :local(.divRight) {
+      height: 1px;
+      width: 50%;
+      margin: 0 10px;
+      background-color: @black;
+    }
+
+    :local(.divIcon) {
+      max-width: 32px;
+      max-height: 32px;
+    }
+
+    :local(.divText) {
+      color: @black;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-left: 10px;
+    }
+  }
+
+  &:local(.vertical) {
+    width: 24px;
+    height: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    :local(.divLeft ){
+      width: 1px;
+      height: 50%;
+      background-color: @black;
+      margin: 0 11px;
+    }
+
+    :local(.divRight) {
+      width: 1px;
+      height: 50%;
+      background-color: @black;
+      margin: 0 11px;
+    }
+
+    &:local(.text) {
+      :local(.divLeft) {
+        width: 1px;
+        height: 30%;
+        margin: 10px 11px;
+        background-color: @black;
+      }
+
+      :local(.divRight) {
+        width: 1px;
+        height: 30%;
+        margin: 10px 11px;
+        background-color: @black;
+      }
+
+      :local(.divIcon) {
+        max-width: 32px;
+        max-height: 32px;
+        margin: 10px 0;
+      }
+
+      :local(.divText) {
+        color: @black;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    &:local(.textIcon) {
+      :local(.divLeft) {
+        width: 1px;
+        max-height: 30%;
+        margin: 0 11px;
+        background-color: @black;
+      }
+
+      :local(.divRight) {
+        width: 1px;
+        max-height: 30%;
+        margin: 0 11px;
+        background-color: @black;
+      }
+
+      :local(.divIcon) {
+        max-width: 32px;
+        max-height: 32px;
+        margin: 0;
+      }
+
+      :local(.divText) {
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0px;
+      }
+    }
+  }
+}
