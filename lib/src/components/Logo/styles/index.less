@@ -1,0 +1,23 @@
+@import "./variables.less";
+
+:local(.logo) {
+  margin: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: @max-width-big-square;
+  height: @max-height-big;
+  background-color: transparent;
+  &:local(.long) {
+    width: auto;
+  }
+
+  &:local(.small) {
+    margin: 5px;
+    width: @max-width-small-square;
+    height: @max-height-small;
+    &:local(.long) {
+      width: auto;
+    }
+  }
+}

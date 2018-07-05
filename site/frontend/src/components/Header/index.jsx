@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import { Typography, Menu, Button, Loader } from "levelup-components";
+import { Typography, Menu, Button, Loader, Logo } from "levelup-components";
 
 const Header = ({ 
 	history, 
@@ -42,6 +42,11 @@ const Header = ({
 
 			<Loader active />
 			<Loader active compact isBlack/>
+
+			<Logo src="https://avatars0.githubusercontent.com/u/16275699?s=200&v=4" />
+			<Logo src="https://www.google.ru/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" isLong />
+			<Logo src="https://avatars0.githubusercontent.com/u/16275699?s=200&v=4" isSmall />
+			<Logo src="https://www.google.ru/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" isLong isSmall/>
 
 			<Typography.Title 
 				fontWeight={900}
