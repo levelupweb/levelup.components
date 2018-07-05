@@ -10,6 +10,7 @@ class TextArea extends React.Component {
 			value: ""
 		};
 		this.handleInput=this.handleInput.bind(this);
+		this.renderLabel=this.renderLabel.bind(this);
 	}
 	handleActive(isActive) {
 		this.setState({
@@ -21,9 +22,23 @@ class TextArea extends React.Component {
 			value: value
 		});
 	}
-	render() {
-		const { isActive } = this.state;
 
+	renderLabel() {
+		const { isActive } = this.state;
+		const { label } = this.props;
+
+		if (!label) {
+			return null;
+		}
+
+		return (
+			<label className={`${isActive && styles.active}`}>
+				{label}
+			</label>
+		);
+	}
+
+	render() {
 		return (
 			<div className={styles.textArea}>
 				<textarea
@@ -31,18 +46,18 @@ class TextArea extends React.Component {
 					onClick={this.handleActive.bind(this, true)}
 					onChange={this.handleInput}
 				/>
-				<span className={`${isActive && styles.active}`}>Enter some text here</span>
+				{this.renderLabel()}
 			</div>
 		);
 	}
 }
 
 TextArea.propTypes = {
-	onFocus: PropTypes.func
+	label: PropTypes.string
 };
 
 TextArea.defaultProps = {
-	onFocus: null
+	label: null
 };
 
 export default TextArea;

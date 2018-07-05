@@ -44,8 +44,8 @@ class FileLoad extends React.Component {
 
 		return (
 			<div className={styles.fileLoad}>
-				<Button onClick={this.handleClick} isPrimary>Choose a file to load</Button>
-				<p>{this.state.files[0] && this.state.files[0].name}</p>
+				<Button onClick={this.handleClick} isPrimary>load file</Button>
+				<p>{this.state.files[0] ? this.state.files[0].name : "Choose a file to load"}</p>
 				<input multiple={multi} onChange={this.handleChange} type="file" ref={this.handleRef} hidden />
 			</div>
 		);

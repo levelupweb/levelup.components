@@ -59,6 +59,22 @@ class CheckBox extends React.Component {
 		}
 	}
 
+	renderLabel() {
+		const { label } = this.props;
+		const { id } = this.state;
+		if (!label) {
+			return null;
+		}
+
+		return (
+			<label
+				htmlFor={id}
+			>
+				{label}
+			</label>
+		);
+	}
+
 	render() {
 		const { id } = this.state;
 		const value = this.getValue();
@@ -76,9 +92,7 @@ class CheckBox extends React.Component {
 					ref={this.handleRef}
 				/>
 				<span />
-				<label htmlFor={id}>
-					Some label for checkbox
-				</label>
+				{this.renderLabel()}
 			</div>
 		);
 	}
@@ -88,12 +102,14 @@ CheckBox.propTypes = {
 	type: PropTypes.string,
 	checked: PropTypes.bool,
 	onChange: PropTypes.func,
+	label: PropTypes.string
 
 };
 
 CheckBox.defaultProps = {
 	onChange: null,
 	checked: null,
+	label: null
 };
 
 export default CheckBox;

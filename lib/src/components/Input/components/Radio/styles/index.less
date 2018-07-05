@@ -1,0 +1,43 @@
+@import "../../../../../core/variables/ratios.less";
+@import "../../../../../core/variables/typography.less";
+@import "../../../../../core/variables/common.less";
+@import "../../../../../core/variables/colors.less";
+@import "../../../../../core/mixins/font.less";
+
+:local(.radio){
+	cursor: default;
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0;
+	width: 100%;
+	align-items: flex-start;
+	:local(.input) {
+		position: relative;
+		padding-left: 20px;
+		&::before {
+			content: '';
+			border: 2px solid @checkbox;
+			border-radius: 50%;
+			transition: @transition;
+			width: @typography-font-size;
+			height: @typography-font-size;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transform: translate(0);
+			transition: @transition;
+		}
+		&:local(.checked) {
+			&::before{
+				content: '';
+				border-color: @primary;
+				background-color: @primary;
+			}
+		}
+	}
+	:local(.label){
+		text-align: center;
+		flex-basis: 50%;
+	}
+
+}

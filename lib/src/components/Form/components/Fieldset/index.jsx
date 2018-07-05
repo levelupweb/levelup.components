@@ -24,23 +24,45 @@ class Fieldset extends React.Component {
 		);
 	}
 
+	renderInputs() {
+		const { children } = this.props;
+
+		return children;
+	}
+
 	render() {
 		return (
 			<fieldset
 				className={styles.fieldset}
 			>
 				{this.renderLegend()}
+				<div className={styles.fields}>
+					{this.renderInputs()}
+				</div>
 			</fieldset>
 		);
 	}
 }
 
 Fieldset.propTypes = {
-	legend: PropTypes.string
+	legend: PropTypes.string,
+	children: PropTypes.oneOfType([
+		PropTypes.node,
+		PropTypes.func,
+		PropTypes.element,
+		PropTypes.object,
+		PropTypes.arrayOf(PropTypes.oneOfType([
+			PropTypes.node,
+			PropTypes.func,
+			PropTypes.element,
+			PropTypes.object
+		]))
+	])
 };
 
 Fieldset.defaultProps = {
-	legend: null
+	legend: null,
+	children: null
 };
 
 export default Fieldset;
