@@ -11,7 +11,6 @@ class Divider extends React.Component {
 
 	renderChilds() {
 		const {
-			src,
 			text,
 			icon,
 		} = this.props;
@@ -62,7 +61,6 @@ Divider.propTypes = {
 	text: PropTypes.bool,
 	icon: PropTypes.string,
 	vertical: PropTypes.bool,
-	src: PropTypes.string,
 };
 
 Divider.defaultProps = {
@@ -70,9 +68,8 @@ Divider.defaultProps = {
 	style: {},
 	className: "",
 	text: false,
-	icon: false,
+	icon: null,
 	vertical: false,
-	src: null,
 };
 
 export default Divider;
